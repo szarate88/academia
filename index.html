@@ -19,7 +19,7 @@
     --ochre: #B97A28;
     --rust: #A6503A;
     --rule: #DCD5C2;
-    --max: 850px; /* Expandido ligeramente para dar soporte a la columna masiva de la foto */
+    --max: 900px; /* Expandido para dar soporte orgánico al nuevo bloque de la foto */
   }
 
   *{ box-sizing: border-box; }
@@ -82,24 +82,24 @@
     border-radius: 50%;
   }
 
-  /* ---------- hero estructural estilo shannon dosemagen ---------- */
+  /* ---------- hero monumental de 320px ---------- */
   header.hero{ padding: 60px 0 20px; }
   
   .hero-row{
     display: grid;
-    grid-template-columns: 260px 1fr; /* Columna masiva fija para la imagen */
-    gap: 48px;
-    align-items: start;
+    grid-template-columns: 320px 1fr; /* Columna masiva e imponente de 320px */
+    gap: 54px; /* Espaciado expandido para balancear el tamaño */
+    align-items: center;
   }
   
   .hero-photo{
     width: 100%;
     height: auto;
-    aspect-ratio: 1 / 1; /* Cuadrado perfecto de alto impacto */
-    border-radius: 14px;
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
     object-fit: cover;
     filter: sepia(3%) saturate(102%);
-    box-shadow: 0 12px 32px rgba(31, 42, 34, 0.06);
+    box-shadow: 0 16px 36px rgba(31, 42, 34, 0.07);
     border: 1px solid var(--rule);
   }
   
@@ -107,7 +107,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
   }
   
   h1{
@@ -124,7 +123,7 @@
     font-size: 16px;
     color: var(--ink-soft);
     max-width: 48ch;
-    line-height: 1.6;
+    line-height: 1.65;
   }
   .role em{
     font-style: italic;
@@ -204,18 +203,18 @@
     color: var(--ink-soft);
   }
 
-  /* Diseño adaptativo fluido para romper la rejilla en móviles */
-  @media (max-width: 680px){
+  /* Ruptura responsiva para dispositivos móviles y tablets */
+  @media (max-width: 768px){
     header.hero { padding: 32px 0 0; }
     .hero-row{ 
-      grid-template-columns: 1fr; /* Una sola columna vertical */
-      gap: 32px; 
+      grid-template-columns: 1fr;
+      gap: 36px; 
     }
     .hero-photo{ 
-      width: 200px; /* Mantiene un tamaño fuerte incluso en pantallas chicas */
-      height: 200px; 
+      width: 240px; /* Tamaño robusto de retrato en pantallas verticales */
+      height: 240px; 
     }
-    h1{ font-size: 32px; }
+    h1{ font-size: 34px; }
   }
 </style>
 </head>
@@ -237,7 +236,7 @@
 
   <header class="hero">
     <div class="hero-row">
-      <!-- FOTO EDITORIAL ESCALADA -->
+      <!-- RENDERIZADO ASIMÉTRICO DE ALTO IMPACTO -->
       <img class="hero-photo" src="assets/IMG_6277.jpg" alt="Julio Sebastián Zárate Vásquez"
            onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=60';">
       <div class="hero-text">
