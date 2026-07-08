@@ -82,30 +82,33 @@
     border-radius: 50%;
   }
 
-  /* ---------- hero ---------- */
-  header.hero{ padding: 30px 0 0; }
+  /* ---------- hero optimizado para foto de mayor impacto ---------- */
+  header.hero{ padding: 40px 0 0; }
   .hero-row{
-    display:flex;
-    align-items:flex-start;
-    gap: 32px;
+    display: flex;
+    align-items: center; /* Alineación centrada para dar balance al tamaño */
+    gap: 40px;
     flex-wrap: wrap;
   }
   .hero-photo{
-    width: 116px;
-    height: 116px;
-    border-radius: 10px;
+    width: 180px;        /* Tamaño expandido */
+    height: 180px;       /* Proporción 1:1 */
+    border-radius: 16px; /* Bordes suavizados modernos */
     object-fit: cover;
     flex-shrink: 0;
-    filter: sepia(6%) saturate(105%);
+    filter: sepia(4%) saturate(102%);
+    box-shadow: 0 8px 24px rgba(31, 42, 34, 0.08); /* Sombra suave orgánica */
+    border: 1px solid var(--rule);
   }
-  .hero-text{ flex:1; min-width: 260px; }
+  .hero-text{ flex: 1; min-width: 280px; }
   h1{
     font-family:'Fraunces', serif;
     font-weight: 600;
-    font-size: 34px;
+    font-size: 36px; /* Ligero ajuste para balancear la foto */
     letter-spacing: -0.5px;
-    margin: 0 0 10px;
+    margin: 0 0 12px;
     color: var(--ink);
+    line-height: 1.2;
   }
   .role{
     font-size: 15.5px;
@@ -190,10 +193,18 @@
     color: var(--ink-soft);
   }
 
-  @media (max-width: 480px){
-    h1{ font-size: 28px; }
-    .hero-row{ gap: 20px; }
-    .hero-photo{ width: 88px; height: 88px; }
+  /* Ajustes responsivos para pantallas móviles */
+  @media (max-width: 540px){
+    h1{ font-size: 30px; }
+    .hero-row { 
+      flex-direction: column; /* La foto se posiciona arriba al centro */
+      align-items: flex-start; 
+      gap: 24px; 
+    }
+    .hero-photo{ 
+      width: 140px; 
+      height: 140px; 
+    }
   }
 </style>
 </head>
@@ -216,7 +227,7 @@
   <header class="hero">
     <div class="hero-row">
       <img class="hero-photo" src="assets/IMG_6277.jpg" alt="Julio Sebastián Zárate Vásquez"
-           onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&auto=format&fit=crop&q=60';">
+           onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=60';">
       <div class="hero-text">
         <h1>Julio Sebastián Zárate Vásquez, Ph.D.</h1>
         <div class="role">Researcher in <em>Science &amp; Technology Studies</em> — data governance, open science, digital commons, and Andean agrobiodiversity.</div>
