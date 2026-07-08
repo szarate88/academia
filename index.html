@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-  :root{
+  :root {
     --paper: #F6F3EA;
     --paper-deep: #EFEADB;
     --ink: #1F2A22;
@@ -19,7 +19,7 @@
     --ochre: #B97A28;
     --rust: #A6503A;
     --rule: #DCD5C2;
-    --max: 700px;
+    --max: 850px; /* Expandido ligeramente para dar soporte a la columna masiva de la foto */
   }
 
   *{ box-sizing: border-box; }
@@ -41,11 +41,11 @@
   a{ color: var(--moss); text-decoration-thickness: 1px; text-underline-offset: 3px; }
   a:hover{ color: var(--ochre); }
 
-  .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 32px; }
 
   /* ---------- nav ---------- */
   nav{
-    padding: 28px 0 0;
+    padding: 32px 0 0;
   }
   nav .wrap{
     display:flex;
@@ -57,10 +57,10 @@
   .nav-name{
     font-family:'Fraunces', serif;
     font-weight:600;
-    font-size: 17px;
+    font-size: 18px;
     letter-spacing: -0.2px;
   }
-  .nav-links{ display:flex; gap: 22px; }
+  .nav-links{ display:flex; gap: 24px; }
   .nav-links a{
     color: var(--ink-soft);
     font-size: 13.5px;
@@ -74,7 +74,7 @@
     display:flex;
     align-items:center;
     gap: 7px;
-    margin: 56px 0;
+    margin: 64px 0;
     height: 14px;
   }
   .diversity-strip span{
@@ -82,38 +82,49 @@
     border-radius: 50%;
   }
 
-  /* ---------- hero optimizado para foto de mayor impacto ---------- */
-  header.hero{ padding: 40px 0 0; }
+  /* ---------- hero estructural estilo shannon dosemagen ---------- */
+  header.hero{ padding: 60px 0 20px; }
+  
   .hero-row{
-    display: flex;
-    align-items: center; /* Alineación centrada para dar balance al tamaño */
-    gap: 40px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 260px 1fr; /* Columna masiva fija para la imagen */
+    gap: 48px;
+    align-items: start;
   }
+  
   .hero-photo{
-    width: 180px;        /* Tamaño expandido */
-    height: 180px;       /* Proporción 1:1 */
-    border-radius: 16px; /* Bordes suavizados modernos */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Cuadrado perfecto de alto impacto */
+    border-radius: 14px;
     object-fit: cover;
-    flex-shrink: 0;
-    filter: sepia(4%) saturate(102%);
-    box-shadow: 0 8px 24px rgba(31, 42, 34, 0.08); /* Sombra suave orgánica */
+    filter: sepia(3%) saturate(102%);
+    box-shadow: 0 12px 32px rgba(31, 42, 34, 0.06);
     border: 1px solid var(--rule);
   }
-  .hero-text{ flex: 1; min-width: 280px; }
+  
+  .hero-text{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  
   h1{
     font-family:'Fraunces', serif;
     font-weight: 600;
-    font-size: 36px; /* Ligero ajuste para balancear la foto */
-    letter-spacing: -0.5px;
-    margin: 0 0 12px;
+    font-size: 38px;
+    letter-spacing: -0.75px;
+    margin: 0 0 16px;
     color: var(--ink);
-    line-height: 1.2;
+    line-height: 1.15;
   }
+  
   .role{
-    font-size: 15.5px;
+    font-size: 16px;
     color: var(--ink-soft);
-    max-width: 46ch;
+    max-width: 48ch;
+    line-height: 1.6;
   }
   .role em{
     font-style: italic;
@@ -128,17 +139,17 @@
     letter-spacing: 0.09em;
     text-transform: uppercase;
     color: var(--rust);
-    margin: 0 0 18px;
+    margin: 0 0 20px;
   }
 
-  section{ padding-bottom: 6px; }
+  section{ padding-bottom: 8px; }
 
-  p{ margin: 0 0 18px; color: var(--ink); }
+  p{ margin: 0 0 20px; color: var(--ink); }
   p:last-child{ margin-bottom: 0; }
 
   .lede{
     font-family:'Fraunces', serif;
-    font-size: 19px;
+    font-size: 20px;
     line-height: 1.65;
     font-weight: 400;
     color: var(--ink);
@@ -149,7 +160,7 @@
 
   /* ---------- publications ---------- */
   .pub-item{
-    padding: 18px 0;
+    padding: 20px 0;
     border-bottom: 1px solid var(--rule);
   }
   .pub-item:first-child{ padding-top: 0; }
@@ -157,8 +168,8 @@
   .pub-title{
     font-family:'Fraunces', serif;
     font-weight: 500;
-    font-size: 16.5px;
-    margin: 0 0 5px;
+    font-size: 17px;
+    margin: 0 0 6px;
   }
   .pub-meta{
     font-size: 13.5px;
@@ -175,36 +186,36 @@
 
   /* ---------- contact / footer ---------- */
   footer{
-    margin-top: 12px;
-    padding: 40px 0 70px;
+    margin-top: 24px;
+    padding: 40px 0 80px;
   }
-  footer .eyebrow{ margin-bottom: 14px; }
+  footer .eyebrow{ margin-bottom: 16px; }
   .contact-line{
     font-family:'Fraunces', serif;
-    font-size: 18px;
-    margin-bottom: 14px;
+    font-size: 20px;
+    margin-bottom: 16px;
   }
   .footer-links{
     display:flex;
-    gap: 20px;
+    gap: 24px;
     flex-wrap: wrap;
     font-size: 13.5px;
     font-family:'JetBrains Mono', monospace;
     color: var(--ink-soft);
   }
 
-  /* Ajustes responsivos para pantallas móviles */
-  @media (max-width: 540px){
-    h1{ font-size: 30px; }
-    .hero-row { 
-      flex-direction: column; /* La foto se posiciona arriba al centro */
-      align-items: flex-start; 
-      gap: 24px; 
+  /* Diseño adaptativo fluido para romper la rejilla en móviles */
+  @media (max-width: 680px){
+    header.hero { padding: 32px 0 0; }
+    .hero-row{ 
+      grid-template-columns: 1fr; /* Una sola columna vertical */
+      gap: 32px; 
     }
     .hero-photo{ 
-      width: 140px; 
-      height: 140px; 
+      width: 200px; /* Mantiene un tamaño fuerte incluso en pantallas chicas */
+      height: 200px; 
     }
+    h1{ font-size: 32px; }
   }
 </style>
 </head>
@@ -226,8 +237,9 @@
 
   <header class="hero">
     <div class="hero-row">
+      <!-- FOTO EDITORIAL ESCALADA -->
       <img class="hero-photo" src="assets/IMG_6277.jpg" alt="Julio Sebastián Zárate Vásquez"
-           onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=60';">
+           onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=60';">
       <div class="hero-text">
         <h1>Julio Sebastián Zárate Vásquez, Ph.D.</h1>
         <div class="role">Researcher in <em>Science &amp; Technology Studies</em> — data governance, open science, digital commons, and Andean agrobiodiversity.</div>
