@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moisés Jonathan Zelada Bazán | Perfil Académico</title>
+    <!-- Cargamos PapaParse para leer las publicaciones en tiempo real -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --accent: #0284c7;
+            --border: #e2e8f0;
+            --bg-light: #f8fafc;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        /* Perfil de Presentación */
+        .profile-hero {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 40px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--border);
+            background-color: var(--bg-light);
+        }
+
+        .profile-info h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #0f172a;
+        }
+
+        .profile-info .title {
+            font-size: 16px;
+            color: var(--accent);
+            font-weight: 500;
+            margin: 4px 0 12px 0;
+        }
+
+        /* Enlaces de Contacto */
+        .contact-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s ease;
+        }
+
+        .contact-btn:hover {
+            color: var(--accent);
+        }
+
+        /* Secciones del CV */
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #0f172a;
+            border-bottom: 2px solid var(--text-main);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        p.sumilla {
+            color: var(--text-main);
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        /* Listado de Publicaciones */
+        .pub-item {
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .pub-title {
+            font-weight: 600;
+            font-size: 15px;
+            color: #0f172a;
+            margin: 0 0 4px 0;
+        }
+
+        .pub-meta {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin: 0 0 6px 0;
+        }
+
+        .pub-link {
+            font-size: 13px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .pub-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- HÉROE: FOTO + INFO BÁSICA -->
+    <header class="profile-hero">
+        <img src="assets/foto.jpg" alt="Moisés Jonathan Zelada Bazán" class="profile-img" onerror="this.style.display='none'">
+        <div class="profile-info">
+            <h1>Moisés Jonathan Zelada Bazán</h1>
+            <div class="title">Ph.D. • Investigador y Docente en Sociología y CTS</div>
+            
+            <div class="contact-links">
+                <!-- Reemplaza con tus datos reales -->
+                <a href="mailto:tu-correo@pucp.edu.pe" class="contact-btn">📧 Correo Institucional</a>
+                <a href="https://www.linkedin.com/feed/" target="_blank" class="contact-btn">💼 LinkedIn</a>
+                <a href="https://github.com/tu-usuario" target="_blank" class="contact-btn">🐙 GitHub</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SUMILLA -->
+    <section>
+        <h2>Sobre mí</h2>
+        <p class="sumilla">
+            Doctor (Ph.D.) e investigador social especializado en la sociología de la ciencia, tecnología y sociedad (CTS), con especial énfasis en la gobernanza de datos, soberanía indígena y la sociología de la agrobiodiversidad andina. Ejerzo como docente universitario, orientando el análisis de datos sociales y el estudio de las infraestructuras abiertas desde marcos éticos y comunitarios. Fundador de iniciativas de divulgación científica orientadas a estrechar los lazos entre la producción de conocimiento y el impacto social en el Perú.
+        </p>
+    </section>
+
+    <!-- PROYECTOS PRINCIPALES -->
+    <section>
+        <h2>Proyectos Destacados</h2>
+        <div class="pub-item">
+            <div class="pub-title">Asociación Siderus Nuncius</div>
+            <div class="pub-meta">Fundador • Gestión de iniciativas de divulgación y financiamiento para la relación ciencia-sociedad.</div>
+        </div>
+        <div class="pub-item">
+            <div class="pub-title">Red CTS Perú</div>
+            <div class="pub-meta">Organizador • Coordinación del Encuentro CTS Perú 2026 y articulación de alianzas académicas.</div>
+        </div>
+    </section>
+
+    <!-- PUBLICACIONES AUTOMATIZADAS -->
+    <section>
+        <h2>Investigaciones y Publicaciones</h2>
+        <div id="publications-list">
+            <p style="color: var(--text-muted); font-size: 14px;">Cargando repositorio de publicaciones...</p>
+        </div>
+    </section>
+</div>
+
+<script>
+    // Conectamos directamente con el CSV de tu otro repositorio para mantenerlo centralizado
+    // Reemplaza "tu-usuario" por tu nombre de usuario de GitHub exacto
+    const githubUser = window.location.hostname.split('.')[0] || "tu-usuario";
+    const urlPubs = `https://raw.githubusercontent.com/${githubUser}/batcave-dashboard/main/data/publications.csv`;
+
+    Papa.parse(urlPubs, {
+        download: true,
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+            const data = results.data;
+            let htmlContent = "";
+
+            if (!data || data.length === 0) {
+                document.getElementById('publications-list').innerHTML = '<p style="color: var(--text-muted);">No se encontraron publicaciones registradas.</p>';
+                return;
+            }
+
+            data.forEach(row => {
+                if (row.Title && row.Status && row.Status.trim().toLowerCase() === "published") {
+                    htmlContent += `
+                        <div class="pub-item">
+                            <div class="pub-title">${row.Title}</div>
+                            <div class="pub-meta">
+                                ${row.Authors || ''} (${row.Year || ''}). <em>${row['Journal/Publisher'] || ''}</em>
+                            </div>
+                            ${row['DOI/Link'] ? `<a href="${row['DOI/Link'].trim()}" target="_blank" class="pub-link">Ver publicación ↗</a>` : ''}
+                        </div>
+                    `;
+                }
+            });
+
+            document.getElementById('publications-list').innerHTML = htmlContent || '<p style="color: var(--text-muted);">No hay publicaciones marcadas como completadas.</p>';
+        },
+        error: function() {
+            document.getElementById('publications-list').innerHTML = '<p style="color: var(--text-muted);">Error al conectar con el repositorio de publicaciones.</p>';
+        }
+    });
+</script>
+
+</body>
+</html>
