@@ -8,11 +8,11 @@
     
     <style>
         :root {
-            --bg-earth: #0f172a;       /* Fondo oscuro profundo texturizado */
-            --bg-card: #1e293b;        /* Slate para bloques de contenido */
-            --accent-potato: #f43f5e;  /* Carmín/Púrpura vibrante de papas nativas */
+            --bg-earth: #0f172a;       /* Fondo oscuro profundo */
+            --bg-card: #1e293b;        /* Slate para bloques limpios */
+            --accent-potato: #f43f5e;  /* Carmín de papas nativas */
             --accent-corn: #f59e0b;    /* Oro andino */
-            --accent-digital: #10b981; /* Verde de comunes y biodiversidad */
+            --accent-digital: #10b981; /* Verde de comunes y ciencia abierta */
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --border: #334155;
@@ -22,60 +22,62 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             color: var(--text-main);
             background-color: var(--bg-earth);
-            background-image: radial-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 0); /* Trama sutil de comunes digitales */
+            background-image: radial-gradient(rgba(16, 185, 129, 0.03) 1px, transparent 0); /* Trama sutil de comunes */
             background-size: 24px 24px;
             line-height: 1.6;
             margin: 0;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        /* Hero Transformado: Identidad Territorial + Digital */
+        /* Presentación Estilo Landing Page */
         .profile-hero {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border: 1px solid var(--border);
-            padding: 32px;
-            border-radius: 16px;
             display: flex;
             align-items: center;
-            gap: 32px;
-            margin-bottom: 32px;
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+            gap: 40px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
         }
 
         .profile-img {
-            width: 160px;
-            height: 160px;
-            border-radius: 12px; /* Cuadrado suavizado más moderno que el círculo */
+            width: 140px;
+            height: 140px;
+            border-radius: 16px;
             object-fit: cover;
             border: 2px solid var(--accent-digital);
-            box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+        }
+
+        .profile-info {
+            flex: 1;
+            min-width: 280px;
         }
 
         .profile-info h1 {
             margin: 0;
-            font-size: 30px;
+            font-size: 32px;
             font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(to right, #f8fafc, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.75px;
+            color: #ffffff;
         }
 
-        .profile-info .title {
+        .profile-info .subtitle {
             font-size: 16px;
+            color: var(--text-muted);
+            margin: 8px 0 16px 0;
+            line-height: 1.4;
+        }
+
+        .profile-info .subtitle strong {
             color: var(--accent-digital);
             font-weight: 600;
-            margin: 6px 0 16px 0;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
 
-        /* Ecosistema de Contacto Filtrado */
+        /* Enlaces de Contacto y Redes */
         .contact-links {
             display: flex;
             gap: 12px;
@@ -83,7 +85,7 @@
         }
 
         .contact-btn {
-            background-color: rgba(255, 255, 255, 0.03);
+            background-color: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border);
             color: var(--text-main);
             padding: 8px 16px;
@@ -100,40 +102,23 @@
         .contact-btn:hover {
             border-color: var(--accent-potato);
             color: var(--accent-potato);
-            background-color: rgba(244, 63, 94, 0.05);
-            transform: translateY(-2px);
+            background-color: rgba(244, 63, 94, 0.03);
+            transform: translateY(-1px);
         }
 
-        /* Manifiesto Epistemológico Inicial */
-        .manifesto-tag {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-bottom: 32px;
-        }
-        .core-pillar {
-            background: rgba(30, 41, 59, 0.5);
-            border-left: 3px solid var(--accent-corn);
-            padding: 16px;
-            border-radius: 0 12px 12px 0;
-            font-size: 13px;
-        }
-        .core-pillar strong { display: block; color: var(--text-main); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
-        .core-pillar p { margin: 0; color: var(--text-muted); }
-
-        /* Secciones */
+        /* Secciones de Contenido */
         .card {
             background-color: var(--bg-card);
             border-radius: 16px;
             padding: 32px;
             margin-bottom: 32px;
             border: 1px solid var(--border);
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
             margin-top: 0;
-            font-size: 16px;
+            font-size: 15px;
             color: var(--accent-corn);
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -146,11 +131,11 @@
             color: #cbd5e1;
             font-size: 15px;
             text-align: justify;
-            line-height: 1.7;
+            line-height: 1.75;
             margin: 0;
         }
 
-        /* Líneas de Tiempo e Items */
+        /* Listas de Proyectos y Publicaciones */
         .item-list {
             margin-bottom: 24px;
             padding-bottom: 20px;
@@ -171,10 +156,15 @@
         }
 
         .item-meta {
-            font-size: 13px;
+            font-size: 13.5px;
             color: var(--text-muted);
-            margin: 0 0 8px 0;
-            line-height: 1.5;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .item-meta strong {
+            color: var(--accent-potato);
+            font-weight: 600;
         }
 
         .pub-link {
@@ -182,39 +172,27 @@
             color: var(--accent-digital);
             text-decoration: none;
             font-weight: 600;
-            display: inline-flex;
-            align-items: center;
+            display: inline-block;
+            margin-top: 8px;
         }
 
         .pub-link:hover {
-            color: var(--text-main);
             text-decoration: underline;
-        }
-
-        /* Etiquetas de Destrezas */
-        .badge-tag {
-            display: inline-block;
-            background-color: #0f172a;
-            border: 1px solid var(--border);
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            color: #e2e8f0;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            font-weight: 500;
+            color: var(--text-main);
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- CABECERA PRINCIPAL CON NOMBRE CORREGIDO DE FOTO -->
+    <!-- HERO PRINCIPAL: ENFOQUE DE TARJETA ACADÉMICA -->
     <header class="profile-hero">
         <img src="assets/IMG_6277.jpg" alt="Julio Sebastián Zárate Vásquez" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=60';">
         <div class="profile-info">
-            <h1>Julio Sebastián Zárate Vásquez</h1>
-            <div class="title">Estudios CTS • Gobernanza de Datos & Agrobiodiversidad Andina</div>
+            <h1>Julio Sebastián Zárate Vásquez, Ph.D.</h1>
+            <div class="subtitle">
+                Investigador en <strong>Estudios CTS</strong> • Gobernanza de Datos, Ciencia Abierta, Comunes Digitales y Agrobiodiversidad Andina.
+            </div>
             
             <div class="contact-links">
                 <a href="mailto:jszarate88@gmail.com" class="contact-btn">📧 jszarate88@gmail.com</a>
@@ -224,87 +202,43 @@
         </div>
     </header>
 
-    <!-- PILARES EPISTEMOLÓGICOS (INTERDISCIPLINARIEDAD EN ACCIÓN) -->
-    <div class="manifesto-tag">
-        <div class="core-pillar" style="border-left-color: var(--accent-potato);">
-            <strong>Agrobiodiversidad</strong>
-            <p>Etnografía y conservación cooperativa de germoplasma de papa nativa en comunidades rurales andinas.</p>
-        </div>
-        <div class="core-pillar" style="border-left-color: var(--accent-digital);">
-            <strong>Comunes Digitales</strong>
-            <p>Exploración de la justicia de datos y la apertura de infraestructuras de conocimiento en el Sur Global.</p>
-        </div>
-        <div class="core-pillar" style="border-left-color: var(--accent-corn);">
-            <strong>Ciencia Abierta</strong>
-            <p>Análisis de políticas públicas e innovación responsable cruzando tecnología y saberes locales.</p>
-        </div>
-    </div>
-
-    <!-- SUMILLA / PERFIL -->
+    <!-- SOBRE MÍ / ENFOQUE EPISTEMOLÓGICO -->
     <div class="card">
-        <h2>Trayectoria Investigativa</h2>
+        <h2>Áreas de Trabajo</h2>
         <p class="sumilla">
-            Investigador social y sociólogo especializado en las dimensiones socioambientales de la ciencia, tecnología y sociedad (CTS). Su trabajo aborda críticamente los marcos institucionales de la gobernanza de datos, la biodiversidad agrícola y los derechos de las comunidades indígenas en los Andes. A través de metodologías cualitativas y el estudio de plataformas digitales, examina los desafíos de abrir los sistemas de conocimiento bajo principios éticos y de soberanía local.
+            Sociólogo dedicado al estudio de las dimensiones socioambientales y políticas de la ciencia y la tecnología (CTS) en América Latina. Su investigación examina críticamente las infraestructuras de conocimiento abierto, la justicia de datos y la soberanía de las comunidades indígenas frente a las plataformas digitales. A través de la etnografía y el análisis cualitativo, colabora con redes locales e internacionales para repensar la conservación cooperativa de la biodiversidad agrícola andina bajo principios de innovación responsable y comunes del conocimiento.
         </p>
     </div>
 
-    <!-- PROYECTOS E INVESTIGACIÓN ACUMULADA -->
+    <!-- PROYECTOS EN CURSO E INSTITUCIONES -->
     <div class="card">
-        <h2>Proyectos Destacados & Financiamiento</h2>
+        <h2>Proyectos & Redes</h2>
+        
         <div class="item-list">
-            <div class="item-title">SEEKCommons Network (National Science Foundation)</div>
+            <div class="item-title">SEEKCommons Network</div>
             <div class="item-meta">
-                <strong>Investigador Principal (2024)</strong> • "Exploring the Challenges of Opening Agrobiodiversity Knowledge Infrastructures in the Andes". Métodos etnográficos y análisis computacional básico (web scraping) aplicados a las prácticas de justicia ambiental y de datos en la región andina.
+                <strong>Investigación Principal</strong> • "Exploring the Challenges of Opening Agrobiodiversity Knowledge Infrastructures in the Andes" (National Science Foundation). Análisis de infraestructuras tecnológicas, justicia socioambiental y soberanía de datos en los comunes andinos.
             </div>
         </div>
+
         <div class="item-list">
-            <div class="item-title">Sidereus Nuncius & Red CTS Perú</div>
+            <div class="item-title">Asociación Sidereus Nuncius & Red CTS Perú</div>
             <div class="item-meta">
-                <strong>Cofundador</strong> • Impulso de los Estudios Sociales de la Ciencia y la Tecnología en el ámbito peruano. Coordinación y articulación interdisciplinar con sectores de arte, diseño y políticas públicas para la co-creación de espacios de divulgación y reflexividad.
+                <strong>Iniciativa Colectiva</strong> • Institucionalización y articulación de los Estudios Sociales de la Ciencia, Tecnología y Sociedad en el Perú. Espacios de discusión interdisciplinar que cruzan el arte, el diseño computacional y las políticas científicas.
             </div>
         </div>
+
         <div class="item-list">
-            <div class="item-title">Centro Internacional de la Papa (CIP)</div>
+            <div class="item-title">Centro Internacional de la Papa (CIP) & Observatorio OGM</div>
             <div class="item-meta">
-                <strong>Investigador Predoctoral (2022 - 2023)</strong> • Investigación etnográfica in situ. Observación participante interactuando con agricultores, científicos y agencias de desarrollo para evaluar cómo se salvaguarda de manera colectiva el patrimonio fitogenético andino.
+                <strong>Colaboraciones Etnográficas</strong> • Investigación orientada a comprender las dinámicas de conservación de germoplasma de papa nativa en comunidades de altura y el monitoreo regulatorio e institucional de la edición genética.
             </div>
         </div>
     </div>
 
-    <!-- FORMACIÓN -->
+    <!-- PUBLICACIONES TOTALMENTE AUTOMATIZADAS -->
     <div class="card">
-        <h2>Formación Académica</h2>
-        <div class="item-list">
-            <div class="item-title">PhD. en Recursos Forestales y Ambientales (2024)</div>
-            <div class="item-meta">North Carolina State University • Raleigh, Estados Unidos</div>
-        </div>
-        <div class="item-list">
-            <div class="item-title">Máster en Política de Ciencia y Tecnología (2020)</div>
-            <div class="item-meta">Arizona State University • Tempe, Estados Unidos</div>
-        </div>
-        <div class="item-list">
-            <div class="item-title">Licenciado y Bachiller en Sociología</div>
-            <div class="item-meta">Pontificia Universidad Católica del Perú • Lima, Perú</div>
-        </div>
-    </div>
-
-    <!-- IDIOMAS & COMPETENCIAS -->
-    <div class="card">
-        <h2>Competencias e Idiomas</h2>
-        <div style="margin-top: 10px;">
-            <span class="badge-tag">Español (Nativo)</span>
-            <span class="badge-tag">Inglés (Avanzado C1)</span>
-            <span class="badge-tag">Quechua (A1)</span>
-            <span class="badge-tag">Alemán (A1)</span>
-            <span class="badge-tag">Análisis Cualitativo (Taguette)</span>
-            <span class="badge-tag">Python (Análisis de datos / Extracción de texto)</span>
-            <span class="badge-tag">Zotero</span>
-        </div>
-    </div>
-
-    <!-- PUBLICACIONES AUTOMATIZADAS -->
-    <div class="card">
-        <h2>Investigaciones & Publicaciones</h2>
+        <h2>Publicaciones</h2>
         <div id="publications-list">
             <p style="color: var(--text-muted); font-size: 14px;">Sincronizando dinámicamente con el repositorio de publicaciones...</p>
         </div>
@@ -312,7 +246,7 @@
 </div>
 
 <script>
-    // Sincronización transparente con el repositorio central privado de tu Batcueva
+    // Conectores automáticos en crudo hacia tu base de datos central en la Batcueva
     const githubUser = window.location.hostname.split('.')[0] || "tu-usuario";
     const urlPubs = `https://raw.githubusercontent.com/${githubUser}/batcave-dashboard/main/data/publications.csv`;
 
@@ -333,7 +267,7 @@
                 if (row.Title && row.Status && row.Status.trim().toLowerCase() === "published") {
                     htmlContent += `
                         <div class="item-list">
-                            <div class="item-title" style="font-size:15px; font-weight:600;">${row.Title}</div>
+                            <div class="item-title" style="font-size:15px; font-weight:600; color: var(--text-main);">${row.Title}</div>
                             <div class="item-meta">
                                 ${row.Authors || ''} (${row.Year || ''}). <em>${row['Journal/Publisher'] || ''}</em>.
                             </div>
