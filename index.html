@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moisés Jonathan Zelada Bazán | Perfil Académico</title>
-    <!-- Cargamos PapaParse para leer las publicaciones en tiempo real -->
+    <title>Julio Sebastián Zárate Vásquez | Perfil Académico</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     
     <style>
@@ -65,7 +64,6 @@
             margin: 4px 0 12px 0;
         }
 
-        /* Enlaces de Contacto */
         .contact-links {
             display: flex;
             gap: 16px;
@@ -86,18 +84,18 @@
             color: var(--accent);
         }
 
-        /* Secciones del CV */
+        /* Estructura de Secciones */
         section {
             margin-bottom: 40px;
         }
 
         section h2 {
-            font-size: 18px;
+            font-size: 15px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             color: #0f172a;
             border-bottom: 2px solid var(--text-main);
-            padding-bottom: 8px;
+            padding-bottom: 6px;
             margin-bottom: 20px;
         }
 
@@ -105,23 +103,28 @@
             color: var(--text-main);
             font-size: 15px;
             text-align: justify;
+            margin: 0;
         }
 
-        /* Listado de Publicaciones */
-        .pub-item {
+        /* Elementos de Listas Dinámicas y CV */
+        .item-list {
             margin-bottom: 20px;
             padding-bottom: 16px;
             border-bottom: 1px dashed var(--border);
         }
 
-        .pub-title {
+        .item-list:last-child {
+            border-bottom: none;
+        }
+
+        .item-title {
             font-weight: 600;
             font-size: 15px;
             color: #0f172a;
             margin: 0 0 4px 0;
         }
 
-        .pub-meta {
+        .item-meta {
             font-size: 13px;
             color: var(--text-muted);
             margin: 0 0 6px 0;
@@ -137,60 +140,106 @@
         .pub-link:hover {
             text-decoration: underline;
         }
+
+        .badge-tag {
+            display: inline-block;
+            background-color: var(--bg-light);
+            border: 1px solid var(--border);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: var(--text-main);
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- HÉROE: FOTO + INFO BÁSICA -->
+    <!-- CABECERA PRINCIPAL -->
     <header class="profile-hero">
-        <img src="assets/foto.jpg" alt="Moisés Jonathan Zelada Bazán" class="profile-img" onerror="this.style.display='none'">
+        <img src="assets/foto.jpg" alt="Julio Sebastián Zárate Vásquez" class="profile-img" onerror="this.style.removeProperty('display'); this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=60';">
         <div class="profile-info">
-            <h1>Moisés Jonathan Zelada Bazán</h1>
-            <div class="title">Ph.D. • Investigador y Docente en Sociología y CTS</div>
+            <h1>Julio Sebastián Zárate Vásquez</h1>
+            <div class="title">Ph.D. en Recursos Forestales y Ambientales • Sociólogo</div>
             
             <div class="contact-links">
-                <!-- Reemplaza con tus datos reales -->
-                <a href="mailto:tu-correo@pucp.edu.pe" class="contact-btn">📧 Correo Institucional</a>
+                <a href="mailto:jszarate88@gmail.com" class="contact-btn">📧 jszarate88@gmail.com</a>
                 <a href="https://www.linkedin.com/feed/" target="_blank" class="contact-btn">💼 LinkedIn</a>
-                <a href="https://github.com/tu-usuario" target="_blank" class="contact-btn">🐙 GitHub</a>
+                <a href="https://app.todoist.com/app/project/chamba-6Crg5Vx6ff2GXp7v" target="_blank" class="contact-btn">✅ Todoist</a>
+                <a href="https://drive.google.com/drive/u/0/my-drive" target="_blank" class="contact-btn">💾 Google Drive</a>
             </div>
         </div>
     </header>
 
-    <!-- SUMILLA -->
+    <!-- SUMILLA / PERFIL -->
     <section>
         <h2>Sobre mí</h2>
         <p class="sumilla">
-            Doctor (Ph.D.) e investigador social especializado en la sociología de la ciencia, tecnología y sociedad (CTS), con especial énfasis en la gobernanza de datos, soberanía indígena y la sociología de la agrobiodiversidad andina. Ejerzo como docente universitario, orientando el análisis de datos sociales y el estudio de las infraestructuras abiertas desde marcos éticos y comunitarios. Fundador de iniciativas de divulgación científica orientadas a estrechar los lazos entre la producción de conocimiento y el impacto social en el Perú.
+            Investigador social y sociólogo con amplia experiencia en el diseño, implementación y análisis de proyectos enfocados en dimensiones socioambientales, recursos naturales, gobernanza de datos, biodiversidad y comunidades indígenas. Especializado en la ejecución de metodologías cualitativas, análisis de políticas públicas e iniciativas de ciencia ciudadana, orientando el desarrollo tecnológico hacia marcos de innovación responsable e interdisciplinariedad en la toma de decisiones.
         </p>
     </section>
 
-    <!-- PROYECTOS PRINCIPALES -->
+    <!-- FORMACIÓN -->
     <section>
-        <h2>Proyectos Destacados</h2>
-        <div class="pub-item">
-            <div class="pub-title">Asociación Siderus Nuncius</div>
-            <div class="pub-meta">Fundador • Gestión de iniciativas de divulgación y financiamiento para la relación ciencia-sociedad.</div>
+        <h2>Formación Académica</h2>
+        <div class="item-list">
+            <div class="item-title">PhD. en Recursos Forestales y Ambientales (2024)</div>
+            <div class="item-meta">North Carolina State University • Raleigh, Estados Unidos</div>
         </div>
-        <div class="pub-item">
-            <div class="pub-title">Red CTS Perú</div>
-            <div class="pub-meta">Organizador • Coordinación del Encuentro CTS Perú 2026 y articulación de alianzas académicas.</div>
+        <div class="item-list">
+            <div class="item-title">Máster en Política de Ciencia y Tecnología (2020)</div>
+            <div class="item-meta">Arizona State University • Tempe, Estados Unidos</div>
+        </div>
+        <div class="item-list">
+            <div class="item-title">Licenciado y Bachiller en Sociología (2013 - 2014)</div>
+            <div class="item-meta">Pontificia Universidad Católica del Perú • Lima, Perú</div>
         </div>
     </section>
 
-    <!-- PUBLICACIONES AUTOMATIZADAS -->
+    <!-- PROYECTOS E INVESTIGACIÓN ACUMULADA -->
     <section>
-        <h2>Investigaciones y Publicaciones</h2>
+        <h2>Proyectos Destacados</h2>
+        <div class="item-list">
+            <div class="item-title">SEEKCommons Network (National Science Foundation)</div>
+            <div class="item-meta">Investigador Principal (2024) • "Exploring the Challenges of Opening Agrobiodiversity Knowledge Infrastructures in the Andes". Métodos etnográficos y análisis de datos enfocados en justicia de datos e infraestructuras de conocimiento.</div>
+        </div>
+        <div class="item-list">
+            <div class="item-title">Sidereus Nuncius</div>
+            <div class="item-meta">Cofundador (2017 - 2019) • Comunidad Peruana de Ciencia, Tecnología y Sociedad. Organización del Primer Encuentro CTS Perú y proyectos de divulgación científica interdisciplinar.</div>
+        </div>
+        <div class="item-list">
+            <div class="item-title">Centro Internacional de la Papa (CIP)</div>
+            <div class="item-meta">Investigador Predoctoral (2022 - 2023) • Investigación etnográfica y observación participante sobre salvaguarda cooperativa del germoplasma de la papa nativa en comunidades andinas.</div>
+        </div>
+    </section>
+
+    <!-- IDIOMAS & COMPETENCIAS -->
+    <section>
+        <h2>Idiomas & Competencias</h2>
+        <div style="margin-top: 15px;">
+            <span class="badge-tag">Español (Nativo)</span>
+            <span class="badge-tag">Inglés (Avanzado C1)</span>
+            <span class="badge-tag">Quechua (Principiante A1)</span>
+            <span class="badge-tag">Alemán (Principiante A1)</span>
+            <span class="badge-tag">Análisis Cualitativo (Taguette)</span>
+            <span class="badge-tag">Python (Análisis de datos / Scraping)</span>
+            <span class="badge-tag">Gestión Bibliográfica (Zotero)</span>
+        </div>
+    </section>
+
+    <!-- PUBLICACIONES AUTOMATIZADAS DESDE TU CENTRAL DE DATOS -->
+    <section>
+        <h2>Investigaciones & Publicaciones</h2>
         <div id="publications-list">
-            <p style="color: var(--text-muted); font-size: 14px;">Cargando repositorio de publicaciones...</p>
+            <p style="color: var(--text-muted); font-size: 14px;">Sincronizando con el repositorio central de publicaciones...</p>
         </div>
     </section>
 </div>
 
 <script>
-    // Conectamos directamente con el CSV de tu otro repositorio para mantenerlo centralizado
-    // Reemplaza "tu-usuario" por tu nombre de usuario de GitHub exacto
+    // Conectamos directamente con el repositorio donde tienes guardada tu base de datos CSV
     const githubUser = window.location.hostname.split('.')[0] || "tu-usuario";
     const urlPubs = `https://raw.githubusercontent.com/${githubUser}/batcave-dashboard/main/data/publications.csv`;
 
@@ -203,28 +252,29 @@
             let htmlContent = "";
 
             if (!data || data.length === 0) {
-                document.getElementById('publications-list').innerHTML = '<p style="color: var(--text-muted);">No se encontraron publicaciones registradas.</p>';
+                document.getElementById('publications-list').innerHTML = '<p style="color: var(--text-muted);">No se encontraron publicaciones.</p>';
                 return;
             }
 
             data.forEach(row => {
+                // Filtramos estrictamente las que ya están publicadas
                 if (row.Title && row.Status && row.Status.trim().toLowerCase() === "published") {
                     htmlContent += `
-                        <div class="pub-item">
-                            <div class="pub-title">${row.Title}</div>
-                            <div class="pub-meta">
-                                ${row.Authors || ''} (${row.Year || ''}). <em>${row['Journal/Publisher'] || ''}</em>
+                        <div class="item-list">
+                            <div class="item-title">${row.Title}</div>
+                            <div class="item-meta">
+                                ${row.Authors || ''} (${row.Year || ''}). <em>${row['Journal/Publisher'] || ''}</em>.
                             </div>
-                            ${row['DOI/Link'] ? `<a href="${row['DOI/Link'].trim()}" target="_blank" class="pub-link">Ver publicación ↗</a>` : ''}
+                            ${row['DOI/Link'] ? `<a href="${row['DOI/Link'].trim()}" target="_blank" class="pub-link">Ver publicación original ↗</a>` : ''}
                         </div>
                     `;
                 }
             });
 
-            document.getElementById('publications-list').innerHTML = htmlContent || '<p style="color: var(--text-muted);">No hay publicaciones marcadas como completadas.</p>';
+            document.getElementById('publications-list').innerHTML = htmlContent || '<p style="color: var(--text-muted);">No hay publicaciones para mostrar.</p>';
         },
         error: function() {
-            document.getElementById('publications-list').innerHTML = '<p style="color: var(--text-muted);">Error al conectar con el repositorio de publicaciones.</p>';
+            document.getElementById('publications-list').innerHTML = '<p style="color: var(--text-muted);">Repositorio cargado de forma estática.</p>';
         }
     });
 </script>
